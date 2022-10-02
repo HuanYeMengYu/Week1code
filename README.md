@@ -1,5 +1,5 @@
 # week1code
-## the usage of gcc 
+## the usage of gcc(-E -S -c -pedantic -Wall -Werror -I -L)
 root@chenzhaoqing-virtual-machine:/home/chenzhaoqing/clanguage# gcc -E test.c -o test.i  
 root@chenzhaoqing-virtual-machine:/home/chenzhaoqing/clanguage# gcc -S test.i -o test.s  
 root@chenzhaoqing-virtual-machine:/home/chenzhaoqing/clanguage# gcc -c test.s -o test.o  
@@ -8,42 +8,40 @@ root@chenzhaoqing-virtual-machine:/home/chenzhaoqing/clanguage# ./test.out
 hello dian  
 root@chenzhaoqing-virtual-machine:/home/chenzhaoqing/clanguage# gcc test.c -o test.out  
 root@chenzhaoqing-virtual-machine:/home/chenzhaoqing/clanguage# ./test.out  
-hello dian
-
-root@chenzhaoqing-virtual-machine:/home/chenzhaoqing/clanguage# gcc -pedantic testerror.c -o testerror.out
-testerror.c: In function ‘main’:
-testerror.c:7:19: error: ‘a’ undeclared (first use in this function)
-    7 |     printf("%d\n",a);
-      |                   ^
-testerror.c:7:19: note: each undeclared identifier is reported only once for each function it appears in
-testerror.c:8:19: error: ‘b’ undeclared (first use in this function)
-    8 |     printf("%d\n",b);
-      |                   ^
-root@chenzhaoqing-virtual-machine:/home/chenzhaoqing/clanguage# gcc -Wall testerror.c -o testerror.out
-testerror.c: In function ‘main’:
-testerror.c:7:19: error: ‘a’ undeclared (first use in this function)
-    7 |     printf("%d\n",a);
-      |                   ^
-testerror.c:7:19: note: each undeclared identifier is reported only once for each function it appears in
-testerror.c:8:19: error: ‘b’ undeclared (first use in this function)
-    8 |     printf("%d\n",b);
-      |                   ^
-testerror.c:6:9: warning: unused variable ‘m’ [-Wunused-variable]
-    6 |     int m=1;
-      |         ^
-testerror.c:5:9: warning: unused variable ‘n’ [-Wunused-variable]
-    5 |     int n=0;
-      |         ^
-root@chenzhaoqing-virtual-machine:/home/chenzhaoqing/clanguage# gcc -Werror testerror.c -o testerror.out
-testerror.c: In function ‘main’:
-testerror.c:7:19: error: ‘a’ undeclared (first use in this function)
-    7 |     printf("%d\n",a);
-      |                   ^
-testerror.c:7:19: note: each undeclared identifier is reported only once for each function it appears in
-testerror.c:8:19: error: ‘b’ undeclared (first use in this function)
-    8 |     printf("%d\n",b);
-      |                   ^
-
+hello dian  
+root@chenzhaoqing-virtual-machine:/home/chenzhaoqing/clanguage# gcc -pedantic testerror.c -o testerror.out  
+testerror.c: In function ‘main’:  
+testerror.c:7:19: error: ‘a’ undeclared (first use in this function)  
+    7 |     printf("%d\n",a);  
+      |                   ^  
+testerror.c:7:19: note: each undeclared identifier is reported only once for each function it appears in  
+testerror.c:8:19: error: ‘b’ undeclared (first use in this function)  
+    8 |     printf("%d\n",b);  
+      |                   ^  
+root@chenzhaoqing-virtual-machine:/home/chenzhaoqing/clanguage# gcc -Wall testerror.c -o testerror.out  
+testerror.c: In function ‘main’:  
+testerror.c:7:19: error: ‘a’ undeclared (first use in this function)  
+    7 |     printf("%d\n",a);  
+      |                   ^  
+testerror.c:7:19: note: each undeclared identifier is reported only once for each function it appears in  
+testerror.c:8:19: error: ‘b’ undeclared (first use in this function)  
+    8 |     printf("%d\n",b);  
+      |                   ^  
+testerror.c:6:9: warning: unused variable ‘m’ [-Wunused-variable]  
+    6 |     int m=1;  
+      |         ^  
+testerror.c:5:9: warning: unused variable ‘n’ [-Wunused-variable]  
+    5 |     int n=0;  
+      |         ^  
+root@chenzhaoqing-virtual-machine:/home/chenzhaoqing/clanguage# gcc -Werror testerror.c -o testerror.out  
+testerror.c: In function ‘main’:  
+testerror.c:7:19: error: ‘a’ undeclared (first use in this function)  
+    7 |     printf("%d\n",a);  
+      |                   ^  
+testerror.c:7:19: note: each undeclared identifier is reported only once for each function it appears in  
+testerror.c:8:19: error: ‘b’ undeclared (first use in this function)  
+    8 |     printf("%d\n",b);  
+      |                   ^  
 ## some c code
 可变链表：  
 #include <stdio.h> #include <stdlib.h>  
